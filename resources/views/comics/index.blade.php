@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col">
                     <h1 class="text-center my-5">
-                        Laravel DC COMICS
+                        Laravel DC COMICS - All comics
                     </h1>
                     <a href="/" class="my-btn btn btn-primary">
                         Back to the Homepage
@@ -24,6 +24,10 @@
                                 <div class="my-text my-3">
                                     {{ $comic->title }}
                                 </div>
+
+                                <a href="{{ route('comics.show', $comic->id)}}" class="my-btn btn btn-primary">
+                                    Read details
+                                </a>
                             </div>
                         @endforeach
                     </div>

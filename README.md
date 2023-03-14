@@ -19,7 +19,7 @@ Tramite gli appositi comandi artisan create un model OK con relativa migration O
 
 Milestone 2
 Iniziate a definire le prime operazioni CRUD con le relative view:
-- index()
+- index() OK 
 - show()
 - create()
 - store()
