@@ -13,9 +13,9 @@
                             Laravel DC COMICS
                         </h1>
                     </div>
-                    <button class="my-btn btn btn-primary" type="button">
+                    <a href="{{ route('comics.index') }}" class="my-btn btn btn-primary">
                         Load comics
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
