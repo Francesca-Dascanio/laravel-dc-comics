@@ -1,29 +1,32 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel DC Comics</title>
+@extends('layouts.app')
 
-        {{-- Includiamo gli assets con la direttiva @vite --}}
-        @vite('resources/js/app.js')
-    </head>
-    <body>
 
-        <main>
-            <div class="container">
-                <div class="row">
-                    <div class="col text-center">
+@section('content')
 
-                        <h1>
-                            Laravel DC Comics
-                        </h1>
+    <div class="section-cards my-bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="cards d-flex justify-content-between flex-wrap my-5">
+                        @foreach ($comics as $comic)
+                            <div class="my-card my-card-size">
+                                <div>
+                                    <img src="https://6.allegroimg.com/s1024/0cc9e1/a3a876424ac0800c035888f73286" class="my-card-img" alt="card"/>
+                                </div>
 
+                                <div class="my-text">
+                                    {{ $comic->title }}
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
+                    <button class="my-btn btn btn-primary" type="button">
+                        Load more
+                    </button>
                 </div>
             </div>
-        </main>
-
-    </body>
-</html>
+        </div>
+    </div>
+    
+@endsection
