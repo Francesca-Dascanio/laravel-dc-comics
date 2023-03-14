@@ -14,9 +14,9 @@
                     <a href="/" class="my-btn btn btn-primary">
                         Back to the Homepage
                    </a>
-                    <div class="cards d-flex justify-content-between my-5">
+                    <div class="cards d-flex justify-content-start flex-wrap my-5">
                         @foreach ($comics as $comic)
-                            <div class="card col-3">
+                            <div class="card col-4 mb-3 g-3">
                                 <div>
                                     <img src="{{ $comic->thumb }}" class="my-img" alt="card"/>
                                 </div>
@@ -31,6 +31,11 @@
                             </div>
                         @endforeach
                     </div>
+
+                    <a href="{{ route('comics.create')}}" class="my-btn btn btn-primary my-5">
+                        Add new comic
+                   </a>
+
                 </div>
             </div>
         </div>
