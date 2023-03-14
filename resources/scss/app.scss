@@ -1,2 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
+.my-btn {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}

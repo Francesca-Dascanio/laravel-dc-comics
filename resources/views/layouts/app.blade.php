@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col text-center">
 
-                    Header
+                    Footer
 
                 </div>
             </div>
