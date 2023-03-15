@@ -11,22 +11,24 @@
                     
                     
                     <h1 class="text-center my-5">
-                        Laravel DC COMICS - New comic
+                        Laravel DC COMICS - ID comic #{{ $comic->id }}
                     </h1>
 
                     <a href="{{ route('comics.index')}}" class="my-btn btn btn-primary">
                         Back
                     </a>
 
-                    {{-- Form: action, method, token --}}
-                    <form action="{{ route('comics.store')}}" method="POST">
+                    {{-- Form: action, method, token, @method --}}
+                    <form action="{{ route('comics.update', $comic->id)}}" method="POST">
                         @csrf
+
+                        @method('PUT')
 
                         <div class="mb-3">
                             <label for="title" class="form-label">
-                                Title
+                                Title *
                             </label>
-                            <input type="text" class="form-control" id="title" name="title" required>
+                            <input value="{{ $comic->title }}" type="text" class="form-control" id="title" name="title" required>
                         </div>
 
                         <div class="mb-3">
@@ -35,46 +37,50 @@
                                     Description
                                 </label>
                             </div>
-                            <textarea class="form-control" placeholder="Write a brief description here..." id="description" name="description"></textarea>
+                            <textarea class="form-control" id="description" name="description">{{ $comic->description }}</textarea>
                         </div>
 
                         <div class="mb-3">
                             <label for="url" class="form-label">
                                 Url image
                             </label>
-                            <input type="text" class="form-control" id="url" name="url">
+                            <input value="{{ $comic->thumb }}" type="text" class="form-control" id="url" name="url">
                         </div>
 
                         <div class="mb-3">
                             <label for="price" class="form-label">
-                                Price
+                                Price *
                             </label>
-                            <input type="text" class="form-control" id="price" name="price" required>
+                            <input value="{{ $comic->price }}" type="text" class="form-control" id="price" name="price" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="series" class="form-label">
-                                Series
+                                Series *
                             </label>
-                            <input type="text" class="form-control" id="series" name="series" required>
+                            <input value="{{ $comic->series }}" type="text" class="form-control" id="series" name="series" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="date" class="form-label">
-                                Sale Date
+                                Sale Date *
                             </label>
-                            <input type="date" class="form-control" id="date" name="date" required>
+                            <input value="{{ $comic->sale_date }}" type="date" class="form-control" id="date" name="date" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="type" class="form-label">
-                                Type
+                                Type *
                             </label>
-                            <input type="text" class="form-control" id="type" name="type" required>
+                            <input value="{{ $comic->type }}" type="text" class="form-control" id="type" name="type" required>
                         </div>
+
+                        <p class="fst-italic">
+                            All * fields are compulsory.
+                        </p>
                         
                         <button type="submit" class="btn btn-primary">
-                            Add
+                            Update
                         </button>
                     </form>
                       

@@ -14,7 +14,7 @@
                     <a href="/" class="my-btn btn btn-primary">
                         Back to the Homepage
                    </a>
-                    <div class="cards d-flex justify-content-start flex-wrap my-5">
+                    {{-- <div class="cards d-flex justify-content-start flex-wrap my-5">
                         @foreach ($comics as $comic)
                             <div class="card col-4 mb-3 g-3">
                                 <div>
@@ -30,11 +30,76 @@
                                 </a>
                             </div>
                         @endforeach
-                    </div>
+                    </div> --}}
 
-                    <a href="{{ route('comics.create')}}" class="my-btn btn btn-primary my-5">
-                        Add new comic
-                   </a>
+                    <table class="table my-5">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    #
+                                </th>
+                                <th scope="col">
+                                    Title
+                                </th>
+                                <th scope="col">
+                                    Price
+                                </th>
+                                <th scope="col">
+                                    Series
+                                </th>
+                                <th scope="col">
+                                    Sales Date
+                                </th>
+                                <th scope="col">
+                                    Type
+                                </th>
+                                <th scope="col">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($comics as $comic)
+                                <tr>
+                                    <th scope="row">
+                                        {{ $comic->id }}
+                                    </th>
+                                    <td>
+                                        {{ $comic->title }}
+                                    </td>
+                                    <td>
+                                        {{ $comic->price }}
+                                    </td>
+                                    <td>
+                                        {{ $comic->series }}
+                                    </td>
+                                    <td>
+                                        {{ $comic->sale_date }}
+                                    </td>
+                                    <td>
+                                        {{ $comic->type }}
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">
+                                            View
+                                        </a>
+                                        <a href="{{ route('comics.edit', $comic->id)}}" class="btn btn-warning">
+                                            Update
+                                        </a>
+                                        <a href="#" class="btn btn-danger">
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>  
+                            @endforeach
+                        </tbody>
+                    </table>
+
+                    <div>
+                        <a href="{{ route('comics.create')}}" class="my-btn btn btn-success my-5">
+                            Add new comic
+                       </a>
+                    </div>
 
                 </div>
             </div>
