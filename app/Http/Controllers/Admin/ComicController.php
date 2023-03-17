@@ -52,6 +52,8 @@ class ComicController extends Controller
             'series' => 'required|string',
             'date' => 'required',
             'type' => 'required|string'     
+        ], [
+            'title.required' => 'Titolo obbligatorio!!'
         ]);
 
         // Poi chiamo i dati

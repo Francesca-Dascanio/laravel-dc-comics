@@ -32,5 +32,5 @@ tramite javascript, quando l'utente clicca sul pulsante "delete", chiedere confe
 CONSEGNA 17-3
 Potete aggiungere le validazioni in modo da rendere più stabile il vostro gestionale di fumetti.
 Bonus:
-- validare gli input ricevuti in fase di creazione e modifica, rispondendo con errori chiari e in italiano.
-- utilizzare le Request personalizzate per validare i dati
+- validare gli input ricevuti in fase di creazione e modifica, rispondendo con errori chiari e in italiano. OK
+- utilizzare le Request personalizzate per validare i dati OK (prova con title -> create)

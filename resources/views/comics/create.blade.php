@@ -39,7 +39,7 @@
                             <label for="title" class="form-label">
                                 Title
                             </label>
-                            <input type="text" class="form-control" id="title" name="title" required maxlength="255" value="{{ old('title') }}">
+                            <input type="text" class="form-control" id="title" name="title" maxlength="255" value="{{ old('title') }}">
                         </div>
 
                         <div class="mb-3">
