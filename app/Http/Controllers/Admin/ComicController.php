@@ -46,7 +46,7 @@ class ComicController extends Controller
         // Su description mi dà integrity constraints violation -> dove devo dire che è nullable oltre che qui?
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required',
+            'description' => 'required|string|max:500',
             'url' =>'required',
             'price' => 'required|decimal:2',
             'series' => 'required|string',
@@ -117,7 +117,7 @@ class ComicController extends Controller
         // Su description mi dà integrity constraints violation -> dove devo dire che è nullable oltre che qui?
         $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required',
+            'description' => 'required|string|max:500',
             'url' =>'required',
             'price' => 'required|decimal:2',
             'series' => 'required|string',
