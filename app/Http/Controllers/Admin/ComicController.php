@@ -42,6 +42,19 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        // Prima valido i dati
+        // Su description mi dà integrity constraints violation -> dove devo dire che è nullable oltre che qui?
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required',
+            'url' =>'required',
+            'price' => 'required|decimal:2',
+            'series' => 'required|string',
+            'date' => 'required',
+            'type' => 'required|string'     
+        ]);
+
+        // Poi chiamo i dati
         $data = $request->all();
 
         $newComic = new Comic;
@@ -99,6 +112,18 @@ class ComicController extends Controller
     {
         // Riprendo dati del singolo comic tramite id
         $comic = Comic::findOrFail($id);
+
+        // Prima valido i dati
+        // Su description mi dà integrity constraints violation -> dove devo dire che è nullable oltre che qui?
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required',
+            'url' =>'required',
+            'price' => 'required|decimal:2',
+            'series' => 'required|string',
+            'date' => 'required',
+            'type' => 'required|string'     
+        ]);
 
         // Salvo i dati della richiesta inviata
         $data = $request->all();
