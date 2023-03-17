@@ -20,6 +20,17 @@ Tramite gli appositi comandi artisan create un model OK con relativa migration O
 Milestone 2
 Iniziate a definire le prime operazioni CRUD con le relative view:
 - index()   OK 
-- show()    OK   
-- create()  
-- store()
+- show()    OK  
+- create()  OK
+- store()   OK
+
+CONSEGNA 15-3
+Lavorate sulla stessa repo di ieri e completate le operazioni CRUD.
+Bonus:
+tramite javascript, quando l'utente clicca sul pulsante "delete", chiedere conferma della cancellazione, prima di eliminare l'elemento.
+
+CONSEGNA 17-3
+Potete aggiungere le validazioni in modo da rendere più stabile il vostro gestionale di fumetti.
+Bonus:
+- validare gli input ricevuti in fase di creazione e modifica, rispondendo con errori chiari e in italiano.
+- utilizzare le Request personalizzate per validare i dati
